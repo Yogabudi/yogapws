@@ -11,19 +11,19 @@
 class Konfigurasi {
   // lokasi web service pada server
   // contoh : http://localhost/webservice (tanpa diakhiri "/" )
-  public static $LOKASIWS = "http://localhost/yogapws"; 
+  public static $LOKASIWS = ""; 
 
   // nama database
   // contoh : db_buku
-  public static $NAMA_DB = "db_buku";
+  public static $NAMA_DB = "";
 
   // url hosting
   // contoh : localhost
-  public static $HOST = "localhost";    
+  public static $HOST = "";    
   
   // username database
   // contoh : root
-  public static $USER = "root";
+  public static $USER = "";
 
   // password database
   public static $PASSWORD = "";
