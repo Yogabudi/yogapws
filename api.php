@@ -30,11 +30,13 @@
 
 // PENTING : nama objek juga menjadi nama tabel
 
+require("Konfigurasi.php");
+
 // simpan url CRUD server
-$urlRead = "http://localhost/SimpleWebService/server/read.php";
-$urlInsert = "http://localhost/SimpleWebService/server/insert.php";
-$urlUpdate = "http://localhost/SimpleWebService/server/update.php";
-$urlDelete = "http://localhost/SimpleWebService/server/delete.php";
+$urlRead = Konfigurasi::$LOKASIWS . "/server/read.php";
+$urlInsert = Konfigurasi::$LOKASIWS . "/server/insert.php";
+$urlUpdate = Konfigurasi::$LOKASIWS . "/server/update.php";
+$urlDelete = Konfigurasi::$LOKASIWS . "/server/delete.php";
 
 // jika perintah ada pada url atau perintah tersedia
 if(!empty($_GET["perintah"])) {

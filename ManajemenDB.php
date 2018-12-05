@@ -11,7 +11,7 @@
 // 
 // PENTING : nama objek juga menjadi nama tabel
 
-require("InfoDB.php");
+require("Konfigurasi.php");
 
 class ManajemenDB {
 
@@ -26,8 +26,8 @@ class ManajemenDB {
   public function sambungkan() {
     // jika belum tersambung, maka sambungkan
     if(!$this->koneksi) {
-      $this->koneksi = mysqli_connect(InfoDB::$HOST, InfoDB::$USER,
-                                      InfoDB::$PASSWORD, InfoDB::$NAMA_DB);
+      $this->koneksi = mysqli_connect(Konfigurasi::$HOST, Konfigurasi::$USER,
+                                      Konfigurasi::$PASSWORD, Konfigurasi::$NAMA_DB);
     }
 
     return (boolean)$this->koneksi;
