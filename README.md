@@ -41,6 +41,8 @@ public static $PASSWORD = "";
 ```?perintah=operasi,objek,fieldKriteria:valKriteria```
 ### sintaks API delete all
 ```?perintah=operasi,objek```
+
+## Contoh Penggunaan
 ### contoh read
 ```?perintah=read,buku,judul:Android Cookbook```
 ### contoh read all
