@@ -33,10 +33,10 @@
 require("Konfigurasi.php");
 
 // simpan url CRUD server
-$urlRead = $LOKASIWS . "/server/read.php";
-$urlInsert = $LOKASIWS . "/server/insert.php";
-$urlUpdate = $LOKASIWS . "/server/update.php";
-$urlDelete = $LOKASIWS . "/server/delete.php";
+$urlRead = Konfigurasi::$LOKASIWS . "/server/read.php";
+$urlInsert = Konfigurasi::$LOKASIWS . "/server/insert.php";
+$urlUpdate = Konfigurasi::$LOKASIWS . "/server/update.php";
+$urlDelete = Konfigurasi::$LOKASIWS . "/server/delete.php";
 
 // jika perintah ada pada url atau perintah tersedia
 if(!empty($_GET["perintah"])) {
