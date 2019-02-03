@@ -13,6 +13,7 @@
 // sintaks API update     : ?perintah=operasi,objek,fieldKriteria:valKriteria,field:valbaru
 // sintaks API delete     : ?perintah=operasi,objek,fieldKriteria:valKriteria
 // sintaks API delete all : ?perintah=operasi,objek
+// sintaks API tampilkan field : ?perintah=operasi,objek
 
 // contoh read       : ?perintah=read,buku,judul:Android Cookbook
 // contoh read all   : ?perintah=read,buku
@@ -20,6 +21,7 @@
 // contoh update     : ?perintah=update,buku,judul;Android Cookbook,judul:B
 // contoh delete     : ?perintah=delete,buku,judul:A
 // contoh delete all : ?perintah=delete,buku
+// contoh tampilkan field : ?perintah=tampilkanfield,buku
 
 // format request read ke server         : ?objek=val&field=val
 // format request read all ke server     : ?objek=val
@@ -27,6 +29,7 @@
 // format request update ke server       : ?objek=val&kriteria_field=val&field=valbaru
 // format request delete ke server       : ?objek=val&kriteria_field=val
 // format request delete all ke server   : ?objek=val
+// format request tampilkan field ke server   : ?objek=val
 
 // PENTING : nama objek juga menjadi nama tabel
 
@@ -37,6 +40,7 @@ $urlRead = Konfigurasi::$LOKASIWS . "/server/read.php";
 $urlInsert = Konfigurasi::$LOKASIWS . "/server/insert.php";
 $urlUpdate = Konfigurasi::$LOKASIWS . "/server/update.php";
 $urlDelete = Konfigurasi::$LOKASIWS . "/server/delete.php";
+$urlFieldTabel = Konfigurasi::$LOKASIWS . "/server/fieldtabel.php";
 
 // jika perintah ada pada url atau perintah tersedia
 if(!empty($_GET["perintah"])) {
@@ -213,5 +217,20 @@ if(!empty($_GET["perintah"])) {
       // lalu tampilkan respon yang berformat JSON dari server
       echo $respon;
     }
+  }
+  else if($operasi == "tampilkanfield") {
+    // atur request parameter,
+    // kirimkan hanya objek/nama tabel ke server
+    $param = "objek=" . urlencode($objek);
+    
+    // akses url fieldtabel dengan curl dan request parameter yang sudah ditentukan
+    // meggunakan method GET
+    $curl = curl_init($urlFieldTabel . "?" . $param);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $respon = curl_exec($curl);
+    curl_close($curl);
+
+    // lalu tampilkan respon yang berformat JSON dari server
+    echo $respon;
   }
 }
