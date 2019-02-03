@@ -182,7 +182,6 @@ class ManajemenDB {
       
       $i = 0;
       while($data = mysqli_fetch_assoc($query)) {
-        // jika field bukan id maka masukkan field ke array
         $field[$i++] = $data["Field"];
       }
     }
@@ -214,13 +213,7 @@ class ManajemenDB {
   }
   
   function testing() {
-    if ($this->sambungkan()) {
-      $query = mysqli_query($this->koneksi, "describe buku");
-      
-      while($data = mysqli_fetch_assoc($query)) {
-        echo $data["Field"] . "<br>";
-      }
-    }
+    
   }
 
 }
