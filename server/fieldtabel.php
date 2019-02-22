@@ -18,11 +18,21 @@ require("../ManajemenDB.php");
 require("PenyaringURL.php");
 
 $db = new ManajemenDB();
-
-$param = PenyaringURL::dapatkanParamDariURLIni();
 $objek = $_GET["objek"];
 
 $data = $db->dapatkanSemuaField($objek);
-echo json_encode($data);
+$json = "{";
+
+for($i = 0; $i < count($data); $i++) {
+    $json .= "\"field" . $i . "\":\"" . $data[$i] . "\"";
+
+    if($i < count($data) - 1) {
+        $json .= ",";
+    }
+}
+
+$json .= "}";
+
+echo $json;
 
 ?>
