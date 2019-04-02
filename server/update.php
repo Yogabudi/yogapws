@@ -15,7 +15,7 @@ require("../ManajemenDB.php");
 $db = new ManajemenDB();
 
 $objek = $_POST["objek"];
-$fieldKriteria = explode("_", array_keys($_POST)[1])[1];
+$fieldKriteria = explode("->", array_keys($_POST)[1])[1];
 
 if(count($_POST) > 2) {
   $field = array_keys($_POST)[2];
