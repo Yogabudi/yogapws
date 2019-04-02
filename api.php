@@ -151,7 +151,7 @@ if(!empty($_GET["perintah"])) {
     // tambahkan teks "kriteria_" pada awal nama field
     // untuk membedakan antara nama field kriteria dengan nama field yang
     // akan ditambahkan dengan data baru.
-    $fieldKriteria = "kriteria_" . explode(":", $sintaks[2])[0];
+    $fieldKriteria = "kriteria->" . explode(":", $sintaks[2])[0];
     // ambil value kriteria, lalu ambil nama field yang akan ditambahkan
     // dengan data baru beserta datanya di statement ke 4
     $valKriteria = explode(":", $sintaks[2])[1];

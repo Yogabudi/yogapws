@@ -15,7 +15,7 @@ class Konfigurasi {
 
   // nama database
   // contoh : db_buku
-  public static $NAMA_DB = "db_buku";
+  public static $NAMA_DB = "db_sample";
 
   // url hosting
   // contoh : localhost
